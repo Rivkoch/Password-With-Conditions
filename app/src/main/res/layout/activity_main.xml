@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/password_EDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter here your password"/>
+
+    <Button
+        android:id="@+id/enter_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter"/>
+
+    <TextView
+        android:id="@+id/battery_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="battery"/>
+
+</LinearLayout>
