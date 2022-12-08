@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Password With Conditions</string>
     <string name="enter">Enter</string>
+    <string name="info">American pop rock band from Las Vegas, Nevada.\n Dan Reynolds is the lead singer.\n 14 active years</string>
+    <string name="title">Don\'t miss !!!</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,22 +9,58 @@
     android:padding="24dp"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/error_TV"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#F44336"/>
     <EditText
         android:id="@+id/password_EDT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter here your password"/>
+        android:hint="Enter here your password" />
 
     <Button
         android:id="@+id/enter_BTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/enter"/>
+        android:text="@string/enter" />
 
     <TextView
-        android:id="@+id/battery_TV"
+        android:id="@+id/x_TV"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="battery"/>
+        android:hint="x: " />
+
+    <TextView
+        android:id="@+id/y_TV"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="y: " />
+
+    <TextView
+        android:id="@+id/z_TV"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="z: " />
+
+    <TextView
+        android:id="@+id/steps_TV"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="steps: " />
+
+    <TextView
+        android:id="@+id/proximity_TV"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="... " />
 
 </LinearLayout>
