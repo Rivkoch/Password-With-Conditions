@@ -7,6 +7,9 @@ import com.rivkoch.passwordwithconditions.conditions.sensors.StepsCounter;
 
 public class PasswordValidator {
 
+    private final String PASSWORD = "Reynolds"; // passwordexample
+
+
     private static volatile PasswordValidator INSTANCE = null;
     private Boolean correctPassword = false;
 
@@ -23,10 +26,13 @@ public class PasswordValidator {
         return INSTANCE;
     }
 
-    public Boolean checkPassword(EditText password_EDT, StepsCounter stepsCounter, ProximitySensor proximity, int battery){
+    public Boolean checkPassword(EditText password_EDT,
+                                 StepsCounter stepsCounter,
+                                 ProximitySensor proximity,
+                                 Double x, int battery){
         // Check conditions
         if(password_EDT.getText().toString().isEmpty()
-                || proximity.getProximityCounter() != 8 || stepsCounter.getSteps() != 4) {
+                || proximity.getProximityCounter() > 4 || stepsCounter.getSteps() > 4 || x < 1) {
             correctPassword = false;
         }
         // Check the string
@@ -35,6 +41,13 @@ public class PasswordValidator {
     }
 
     private Boolean validateString(EditText password_EDT, int battery) {
-        return password_EDT.getText().toString().equals(String.valueOf(battery));
+
+        String[] tokens=password_EDT.getText().toString().split("%");
+        if(tokens[0].equals(PASSWORD) && tokens[1].equals(String.valueOf(battery))){
+            return true;
+        }
+
+
+        return false;
     }
 }

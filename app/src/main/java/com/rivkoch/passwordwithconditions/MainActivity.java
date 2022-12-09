@@ -26,8 +26,6 @@ import com.rivkoch.passwordwithconditions.conditions.sensors.StepsCounter;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
-    private final String PASSWORD = "Reynolds%100%"; // passwordexample
-
     /*
      * The password should include the current percentage of battery
      * 8 time sensor of proximity
@@ -89,11 +87,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private void setListeners() {
         enter_BTN.setOnClickListener(v -> {
-            passwordOk = ifWifiOnCheckPassword();
-            if (!passwordOk)
+            if (!ifWifiOnCheckPassword()) {
                 error_TV.setText("Wrong password. Can't enter.");
-            else
-            startActivity(new Intent(MainActivity.this, SuccessActivity.class));
+            }
+            else {
+                startActivity(new Intent(MainActivity.this, SuccessActivity.class));
+            }
 
         });
     }
@@ -102,9 +101,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo mWifi = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
+        passwordOk = false;
         if (mWifi.isConnected()) {
-            passwordValidator.checkPassword(password_EDT, stepsCounter, proximity,
+            passwordOk = passwordValidator.checkPassword(
+                    password_EDT, stepsCounter, proximity,
+                    accelerometer.getTheX(x_tv),
                     batteryPercentage.getBatteryPercentage(getApplicationContext()));
+
         }
 
         return passwordOk;

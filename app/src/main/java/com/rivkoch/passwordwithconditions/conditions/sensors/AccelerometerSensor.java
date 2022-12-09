@@ -40,9 +40,13 @@ public class AccelerometerSensor {
     }
 
     public void accelerometerSensorChanged(SensorEvent event, TextView x_tv, TextView y_tv, TextView z_tv) {
-        x_tv.setText(event.values[0] + " m/s2");
-        y_tv.setText(event.values[1] + " m/s2");
-        z_tv.setText(event.values[2] + " m/s2");
+        x_tv.setText(event.values[0] + "");
+        y_tv.setText(event.values[1] + "");
+        z_tv.setText(event.values[2] + "");
+    }
+
+    public Double getTheX(TextView x_tv){
+        return Double.parseDouble(x_tv.getText().toString());
     }
 
     public void resume(MainActivity mainActivity, SensorManager sensorManager) {
